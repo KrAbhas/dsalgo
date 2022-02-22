@@ -1,0 +1,14 @@
+template<class T1, class T2> ll power(T1 n, T2 k) {
+	ll p = n;
+	ll res = 1;
+	ll t = 1;
+	while (t <= k) {
+		if (t & k) {
+			res = (res * p) % inf;
+		}
+		p = (p * p) % inf;
+		t = t << 1;
+	}
+	return res;
+}
+//Remember for modular substraction: (x % n - y % n + n) % n
